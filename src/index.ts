@@ -2,17 +2,17 @@
 
 import { Settings, Region, World, Viewport, MapController, TileMarker, Assets, Location, Chrome, ImageLoader, Trainer, ControlPanelController } from "osrs-sdk";
 
-import NewRelicBrowser from "new-relic-browser";
+// import NewRelicBrowser from "new-relic-browser";
 import { InfernoRegion } from "./content/inferno/js/InfernoRegion";
 import { InfernoSettings } from "./content/inferno/js/InfernoSettings";
 
 const SpecialAttackBarBackground = Assets.getAssetUrl("assets/images/attackstyles/interface/special_attack_background.png");
 
-declare global {
-  interface Window {
-    newrelic: typeof NewRelicBrowser;
-  }
-}
+// declare global {
+//   interface Window {
+//     newrelic: typeof NewRelicBrowser;
+//   }
+// }
 
 Settings.readFromStorage();
 InfernoSettings.readFromStorage();
@@ -144,7 +144,7 @@ function checkStart() {
 
 /// /////////////////////////////////////////////////////////
 
-window.newrelic.addRelease("inferno-trainer", process.env.COMMIT_REF);
+ // window.newrelic.addRelease("inferno-trainer", process.env.COMMIT_REF);
 
 // UI disclaimer
 const topHeaderContainer = document.getElementById("disclaimer_panel");
